@@ -1,0 +1,88 @@
+{% extends '::base.html.twig' %}
+{% block body -%}
+    <div class="container">
+
+        <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">                       
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                         <h4 class="modal-title" id="ModalLabel">New message</h4>
+                    </div>                    
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+        
+        <h1>Product list</h1>
+        <div id="emails"></div>
+        
+        <table id="productTable" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>price</th>
+                <th>description</th>
+                <th>description2</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>price</th>
+                <th>description</th>
+                <th>description2</th>     
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+    </table>
+        
+     {#   <table class="records_list table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Description2</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entity in entities %}
+                    <tr class="modal_show" id="prod_id_{{ entity.id }}">
+                        <td><a href="{{ path('product_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                        <td>{{ entity.name }}</td>
+                        <td>{{ entity.price }}</td>
+                        <td>{{ entity.description }}</td>
+                        <td>{{ entity.description2 }}</td>
+                        <td>{{ entity.category }}</td>
+                        <td>
+
+                            <a href="{{ path('product_show', { 'id': entity.id }) }}">show</a>
+
+                            <a class="edit" id="edit_id_{{ entity.id }}" href="{{ path('product_edit', { 'id': entity.id }) }}">edit</a>
+
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table> #}
+
+        <ul>
+            <li>
+                <a id="new" href="{{ path('product_new') }}">
+                    Create a new product.
+                </a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

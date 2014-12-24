@@ -1,0 +1,11 @@
+<ul>
+    {% for product in products %}
+        <span>
+            <li>id: {{ product.id|e }}</li>
+            <li>name: {{ product.name|e }}</li>
+            <li>price: {{ product.price|e }}</li> 
+            <li>description: {{product.description|e}}</li>
+            <li>category: {{ product.category|e }}</li> 
+        </span>
+    {% endfor %}
+</ul>
