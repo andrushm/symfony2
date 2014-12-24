@@ -16,10 +16,20 @@ class Builder extends ContainerAware
     public function mainMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
+        
+         $menu->setChildrenAttribute('class', 'nav pull-right');
+
+        $menu->addChild('User')
+             ->setAttribute('dropdown', true);
+
+        $menu['User']->addChild('Profile', array('uri' => '#'))
+                     ->setAttribute('divider_append', true);
+        $menu['User']->addChild('Logout', array('uri' => '#'));
+
 
         $menu->addChild('Home', array('route' => 'homepage'));
         $menu->addChild('About Me', array(
-            'route' => 'page_show',
+            'route' => 'product',
             'routeParameters' => array('id' => 42)
         ));
         // ... add more children
