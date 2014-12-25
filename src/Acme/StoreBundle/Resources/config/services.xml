@@ -3,14 +3,21 @@
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-
-    <!--
+<!--
+    services:
+    acme.hello.menu.voter.request:
+        class: Acme\HelloBundle\Menu\RequestVoter
+        arguments:
+            - @service_container
+        tags:
+            - { name: knp_menu.voter }
+  --> 
     <services>
-        <service id="acme_store.example" class="Acme\StoreBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="acme.store.menu.voter.request" class="Acme\StoreBundle\Menu\RequestVoter">
+            <!--<argument type="service" id="service_id" /> -->
+            <argument>@service_container</argument>
+            <argument>{ name: knp_menu.voter }</argument>
         </service>
     </services>
-    -->
+    
 </container>
