@@ -2,6 +2,13 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: @AcmeStoreBundle/Resources/config/admin.xml }
+   
+sonata_admin:
+    title:      Acme Demo Bundle
+    title_logo: bundles/acmestore/img/fancy_acme_logo.png
+    security:
+        handler: sonata.admin.security.handler.role
 
 framework:
     #esi:             ~
