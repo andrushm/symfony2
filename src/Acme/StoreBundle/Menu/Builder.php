@@ -20,7 +20,7 @@ class Builder extends ContainerAware
 
 $menu->setChildrenAttributes(array('class' => 'nav navbar-nav navbar-right'));
 $menu->addChild('Главная', array('route' => 'product'));
-$menu->setCurrentUri($this->container->get('request')->getRequestUri());
+//$menu->setCurrentUri($this->container->get('request')->getRequestUri());
 
 $menu->addChild('Главная', array('route' => 'product'));
 
