@@ -13,8 +13,8 @@ class ProductAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title', 'text', array('label' => 'Post Title'))
-            ->add('author', 'entity', array('class' => 'Acme\DemoBundle\Entity\User'))
+            ->add('name', 'string', array('label' => 'Name'))
+            ->add('author', 'entity', array('class' => 'Acme\UserBundle\Entity\User'))
             ->add('body') //if no type is specified, SonataAdminBundle tries to guess it
         ;
     }
@@ -32,7 +32,7 @@ class ProductAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('title')
+            ->addIdentifier('name')
             ->add('slug')
             ->add('author')
         ;

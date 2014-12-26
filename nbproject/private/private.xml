@@ -5,15 +5,13 @@
         <group>
             <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Menu/Builder.php</file>
             <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Resources/views/Product/show.html.twig</file>
-            <file>file:/W:/symfony2/htdocs/app/config/config_dev.yml</file>
+            <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/DependencyInjection/AcmeStoreExtension.php</file>
             <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Resources/views/Product/edit.html.twig</file>
-            <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Resources/views/Menu/knp_menu.html.twig.twig</file>
+            <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Admin/ProductAdmin.php</file>
             <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Resources/views/Product/new.html.twig</file>
             <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Controller/ProductController.php</file>
             <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Entity/ProductRepository.php</file>
             <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Entity/Product.php</file>
-            <file>file:/W:/symfony2/htdocs/app/config/config.yml</file>
-            <file>file:/W:/symfony2/htdocs/app/Resources/views/base.html.twig</file>
             <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Resources/views/Product/index.html.twig</file>
         </group>
     </open-files>
