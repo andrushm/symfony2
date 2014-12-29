@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Acme\StoreBundle\AcmeStoreBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
+            new Acme\RecipeBundle\AcmeRecipeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
