@@ -47,7 +47,7 @@ class Recipe
      *
      * @ORM\OneToMany(targetEntity="Acme\RecipeBundle\Entity\Composite", mappedBy="recipe")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="composite", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="composite_id", referencedColumnName="id")
      * })
      */
     private $composite;
@@ -218,4 +218,12 @@ class Recipe
     {
         $this->composite->removeElement($composite);
     }
+    
+    public function __toString() {
+         return $this->name;
+    }
+    
+//    public function getIngredient() {
+//        return $this->getComposite()->getIngredient();
+//    }
 }

@@ -15,8 +15,8 @@ class CompositeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('recipeId')
-            ->add('ingredientId')
+//            ->add('recipeId')
+//            ->add('ingredientId')
             ->add('quantity')
         ;
     }

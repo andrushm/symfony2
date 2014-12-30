@@ -30,7 +30,7 @@ class Composite
 
     /**
      * @ORM\OneToOne(targetEntity="Acme\RecipeBundle\Entity\Ingredient")
-     * 
+     * @ORM\JoinColumn(name="ingredient_id", referencedColumnName="id")
      * 
      */
     private $ingredient;
@@ -52,19 +52,6 @@ class Composite
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set recipeId
-     *
-     * @param integer $recipeId
-     * @return Composite
-     */
-    public function setRecipe($recipeId)
-    {
-        $this->recipeId = $recipeId;
-
-        return $this;
     }
 
    
@@ -105,5 +92,30 @@ class Composite
         return $this->recipe;
     }
    
+   
+
+    /**
+     * Set ingredient
+     *
+     * @param \Acme\RecipeBundle\Entity\Ingredient $ingredient
+     * @return Composite
+     */
+    public function setIngredient(\Acme\RecipeBundle\Entity\Ingredient $ingredient = null)
+    {
+        $this->ingredient = $ingredient;
+
+        return $this;
+    }
+
+    /**
+     * Get ingredient
+     *
+     * @return \Acme\RecipeBundle\Entity\Ingredient 
+     */
+    public function getIngredient()
+    {
+        return $this->ingredient;
+    }
+    
    
 }
