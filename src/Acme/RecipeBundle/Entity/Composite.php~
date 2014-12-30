@@ -1,0 +1,109 @@
+<?php
+
+namespace Acme\RecipeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Composite
+ *
+ * @ORM\Table(name="composite")
+ * @ORM\Entity
+ */
+class Composite
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     * @ORM\ManyToOne(targetEntity="Acme\RecipeBundle\Entity\Recipe")
+     * 
+     */
+    private $recipe;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Acme\RecipeBundle\Entity\Ingredient")
+     * 
+     * 
+     */
+    private $ingredient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="quantity", type="decimal", precision=11, scale=3, nullable=true)
+     */
+    private $quantity;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set recipeId
+     *
+     * @param integer $recipeId
+     * @return Composite
+     */
+    public function setRecipe($recipeId)
+    {
+        $this->recipeId = $recipeId;
+
+        return $this;
+    }
+
+   
+    /**
+     * Set quantity
+     *
+     * @param string $quantity
+     * @return Composite
+     */
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Get quantity
+     *
+     * @return string 
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+    
+  /*  public function __toString() {
+        return 'my';
+    }*/
+
+    /**
+     * Get recipe
+     *
+     * @return \Acme\RecipeBundle\Entity\Recipe 
+     */
+    public function getRecipe()
+    {
+        return $this->recipe;
+    }
+   
+   
+}

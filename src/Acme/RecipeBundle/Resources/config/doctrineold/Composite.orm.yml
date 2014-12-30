@@ -1,0 +1,28 @@
+Acme\RecipeBundle\Entity\Composite:
+    type: entity
+    table: composite
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        recipeId:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: recipe_id
+        ingredientId:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: ingredient_id
+        quantity:
+            type: decimal
+            nullable: true
+            precision: 11
+            scale: 3
+    lifecycleCallbacks: {  }
