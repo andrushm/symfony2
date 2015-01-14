@@ -24,12 +24,12 @@ class Composite
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="Acme\RecipeBundle\Entity\Recipe")
-     * 
+     * @ORM\JoinColumn(name="recipe_id", referencedColumnName="id", nullable=true)
      */
     private $recipe;
 
     /**
-     * @ORM\OneToOne(targetEntity="Acme\RecipeBundle\Entity\Ingredient")
+     * @ORM\OneToOne(targetEntity="Acme\RecipeBundle\Entity\Ingredient", cascade={"all"})
      * @ORM\JoinColumn(name="ingredient_id", referencedColumnName="id")
      * 
      */
@@ -118,4 +118,21 @@ class Composite
     }
     
    
+
+    /**
+     * Set recipe
+     *
+     * @param \Acme\RecipeBundle\Entity\Recipe $recipe
+     * @return Composite
+     */
+    public function setRecipe(\Acme\RecipeBundle\Entity\Recipe $recipe = null)
+    {
+        $this->recipe = $recipe;
+
+        return $this;
+    }
+    
+    public function __toString() {
+         return $this->getIngredient()->getName();
+    }
 }

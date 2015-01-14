@@ -20,12 +20,14 @@ class AppKernel extends Kernel
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Acme\UserBundle\AcmeUserBundle(),
             new Acme\StoreBundle\AcmeStoreBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Acme\RecipeBundle\AcmeRecipeBundle(),
+            new Test\NewsBundle\TestNewsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

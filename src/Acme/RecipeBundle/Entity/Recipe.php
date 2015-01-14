@@ -2,6 +2,7 @@
 
 namespace Acme\RecipeBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,25 +31,23 @@ class Recipe
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="created", type="datetime", nullable=true)
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="created", type="datetime")
      */
     private $created;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="updated", type="datetime", nullable=true)
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(name="updated", type="datetime")
      */
     private $updated;
 
     /**
      * @var \Acme\RecipeBundle\Entity\Composite
      *
-     * @ORM\OneToMany(targetEntity="Acme\RecipeBundle\Entity\Composite", mappedBy="recipe")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="composite_id", referencedColumnName="id")
-     * })
+     * @ORM\OneToMany(targetEntity="Acme\RecipeBundle\Entity\Composite", mappedBy="recipe", cascade={"all"})
+     * 
      */
     private $composite;
 
@@ -97,19 +96,7 @@ class Recipe
         return $this->name;
     }
 
-    /**
-     * Set created
-     *
-     * @param \DateTime $created
-     * @return Recipes
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
+    
     /**
      * Get created
      *
@@ -120,18 +107,7 @@ class Recipe
         return $this->created;
     }
 
-    /**
-     * Set updated
-     *
-     * @param \DateTime $updated
-     * @return Recipes
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
-    }
+   
 
     /**
      * Get updated

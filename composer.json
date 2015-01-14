@@ -22,7 +22,9 @@
         "sonata-project/admin-bundle": "~2.3",
         "sonata-project/doctrine-orm-admin-bundle": "~2.3",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "symfony/console": "~2.6"
+        "symfony/console": "~2.6",
+        "gedmo/doctrine-extensions": "dev-master",
+        "knplabs/knp-paginator-bundle": "~2.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.4.4"

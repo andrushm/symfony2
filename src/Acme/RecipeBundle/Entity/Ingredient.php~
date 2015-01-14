@@ -93,4 +93,8 @@ class Ingredient
     {
         return $this->dimension;
     }
+    
+    public function __toString() {
+        return $this->getName();
+    }
 }

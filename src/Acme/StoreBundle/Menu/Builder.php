@@ -27,7 +27,7 @@ class Builder extends ContainerAware {
 
         $menu['User_1']->addChild(' User Profile', array('route' => 'product', 'attributes' => array('icon' => 'fa fa-user fa-fw')));
         $menu['User_1']->addChild(' Settings', array('route' => 'product_new', 'attributes' => array('icon' => 'fa fa-gear fa-fw')));
-        
+
         $security = $this->container->get('security.context');
         if ($security->isGranted('IS_AUTHENTICATED_FULLY')) {
             $username = $security->getToken()->getUser()->getUsername(); //->username();
@@ -69,31 +69,43 @@ class Builder extends ContainerAware {
           return $menu; */
     }
 
-
     public function sidebarMenu(FactoryInterface $factory, array $options) {
 
         $menu = $factory->createItem('root');
 
         $menu->setChildrenAttributes(array('class' => 'nav', 'id' => 'side-menu'));
         //$menu->addChild('Главная', array('route' => 'product'));
-//$menu->setCurrentUri($this->container->get('request')->getRequestUri());
+//        $menu->setCurrentUri($this->container->get('request')->getRequestUri());
 
         $menu->addChild('Главная', array('route' => 'homepage'));
 
         $menu->addChild('Item_1', array('label' => 'Product', 'route' => 'product', 'attributes' => array('class' => 'active', 'icon' => 'fa arrow')));
-       // $menu['Item_1']->setLinkAttributes(array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
-       // $menu['Item_1']->setChildrenAttributes(array('class' => 'dropdown-menu'));
+        // $menu['Item_1']->setLinkAttributes(array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
+        // $menu['Item_1']->setChildrenAttributes(array('class' => 'dropdown-menu'));
 
         $menu['Item_1']->addChild('List', array('route' => 'product'));
         $menu['Item_1']->addChild('Add', array('route' => 'product_new', 'attributes' => array('icon' => 'fa plus-times')));
-        
-//        $menu->addChild('Item_2', array('label' => 'Product', 'route' => '', 'attributes' => array('class' => 'active', 'icon' => 'fa arrow')));
-       // $menu['Item_1']->setLinkAttributes(array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
-       // $menu['Item_1']->setChildrenAttributes(array('class' => 'dropdown-menu'));
 
+//        $menu->addChild('Item_2', array('label' => 'Product', 'route' => '', 'attributes' => array('class' => 'active', 'icon' => 'fa arrow')));
+        // $menu['Item_1']->setLinkAttributes(array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown'));
+        // $menu['Item_1']->setChildrenAttributes(array('class' => 'dropdown-menu'));
 //        $menu['Item_2']->addChild('List', array('route' => ''));
 //        $menu['Item_2']->addChild('Add', array('route' => '', 'attributes' => array('icon' => 'fa plus-times')));
-       // $menu['Item_1']->addChild(NULL, array('attributes' => array('class' => 'divider')));
+        // $menu['Item_1']->addChild(NULL, array('attributes' => array('class' => 'divider')));
+
+        $menu->addChild('Item_2', array('label' => 'Recipe', 'route' => 'recipe', 'attributes' => array('class' => 'active', 'icon' => 'fa arrow')));
+        $menu['Item_2']->addChild('List', array('route' => 'recipe'));
+        $menu['Item_2']->addChild('Add', array('route' => 'recipe_new', 'attributes' => array('icon' => 'fa plus-times')));
+        $menu['Item_2']->addChild('Item_2_2', array('label' => 'Ingredients', 'route' => 'ingredient', 'attributes' => array('class' => 'active', 'icon' => 'fa arrow')));
+        $menu['Item_2']['Item_2_2']->addChild('List', array('route' => 'ingredient'));
+        $menu['Item_2']['Item_2_2']->addChild('Add', array('route' => 'ingredient_new', 'attributes' => array('icon' => 'fa plus-times')));      
+
+        $menu->addChild('Item_3', array('label' => 'News', 'route' => 'news', 'attributes' => array('class' => 'active', 'icon' => 'fa arrow')));
+        $menu['Item_3']->addChild('List', array('route' => 'news'));
+        $menu['Item_3']->addChild('Add', array('route' => 'news_new', 'attributes' => array('icon' => 'fa plus-times')));
+
+
+
         return $menu;
     }
 

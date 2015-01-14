@@ -24,7 +24,7 @@ class Composite
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="Acme\RecipeBundle\Entity\Recipe")
-     * 
+     * @ORM\JoinColumn(name="recipe_id", referencedColumnName="id")
      */
     private $recipe;
 

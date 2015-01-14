@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="ingredient")
  * @ORM\Entity
  */
-class Ingredient
-{
+class Ingredient {
+
     /**
      * @var integer
      *
@@ -36,15 +36,12 @@ class Ingredient
      */
     private $dimension;
 
-
-
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -54,8 +51,7 @@ class Ingredient
      * @param string $name
      * @return Ingredient
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -66,8 +62,7 @@ class Ingredient
      *
      * @return string 
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -77,8 +72,7 @@ class Ingredient
      * @param string $dimension
      * @return Ingredient
      */
-    public function setDimension($dimension)
-    {
+    public function setDimension($dimension) {
         $this->dimension = $dimension;
 
         return $this;
@@ -89,8 +83,12 @@ class Ingredient
      *
      * @return string 
      */
-    public function getDimension()
-    {
+    public function getDimension() {
         return $this->dimension;
     }
+
+    public function __toString() {
+        return (string) $this->getName();
+    }
+
 }

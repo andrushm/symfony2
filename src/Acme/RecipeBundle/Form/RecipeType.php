@@ -16,17 +16,17 @@ class RecipeType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('created')
-            ->add('updated')
-            ->add('composite')
-            ->add('user')
-//            ->add('composite', 'collection', array(
-//                                               'label' => 'Компоненти',
-//                                               'type' => new CompositeType(),
-//                                               'allow_add' => true,
-//                                               'allow_delete' => true,
-//                                               'prototype' => false,
-//                                              ));
+//            ->add('created')
+//            ->add('updated')
+//            ->add('composite')
+//            ->add('user')
+            ->add('composite', 'collection', array(
+                                               'label' => 'Компоненти',
+                                               'type' => new CompositeType(),
+                                               'allow_add' => true,
+                                               'allow_delete' => true,
+                                               'prototype' => true,
+                                              ));
         ;
     }
     
