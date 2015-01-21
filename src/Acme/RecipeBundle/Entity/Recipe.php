@@ -31,7 +31,7 @@ class Recipe
 
     /**
      * @var \DateTime
-     * @Gedmo\Timestampable(on="create")
+     * 
      * @ORM\Column(name="created", type="datetime")
      */
     private $created;
@@ -169,7 +169,7 @@ class Recipe
      */
     public function __construct()
     {
-        $this->composite = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->composite = new \Doctrine\Common\Collections\ArrayCollection();               
     }
 
     /**
@@ -202,4 +202,30 @@ class Recipe
 //    public function getIngredient() {
 //        return $this->getComposite()->getIngredient();
 //    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Recipe
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Recipe
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
 }

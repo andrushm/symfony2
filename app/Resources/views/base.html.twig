@@ -20,12 +20,12 @@
             <link rel="stylesheet" href="{{ asset('bundles/acmestore/font-awesome/css/font-awesome.min.css') }}" />
             <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% endblock %}      
-         <!-- jQuery -->
-            <script src="{{ asset('bundles/acmestore/js/jquery.js') }}"></script>
+        <!-- jQuery -->
+        <script src="{{ asset('bundles/acmestore/js/jquery.js') }}"></script>
     </head>
     <body>
 
-        
+
         <div id="wrapper">
 
             <!-- Navigation -->
@@ -40,7 +40,7 @@
                     <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
                 </div>
                 <!-- /.navbar-header -->
-                 {#{{ knp_menu_render('AcmeStoreBundle:Builder:mainMenu', {'currentClass': 'active'}) }} #}
+                {#{{ knp_menu_render('AcmeStoreBundle:Builder:mainMenu', {'currentClass': 'active'}) }} #}
                 <ul class="nav navbar-top-links navbar-right">
 
                     <li class="dropdown">
@@ -72,9 +72,27 @@
             </nav>
 
             <div id="page-wrapper">
-
-                
-
+                <br>
+                <div class="col-sm-8">
+                    {% for flashMessage in app.session.flashbag.get('success') %}
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Succes!</strong> {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                    {% for flashMessage in app.session.flashbag.get('notice') %}
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Warning!</strong> {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                    {% for flashMessage in app.session.flashbag.get('danger') %}
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Danger!</strong> {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                </div>
                 {% block body %}
 
 
@@ -91,11 +109,11 @@
              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
               #}
 
-           
+
 
             <!-- Bootstrap Core JavaScript -->
             <script src="{{ asset('bundles/acmestore/js/bootstrap.min.js') }}"></script>
-            
+
             <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 
             <!-- Metis Menu Plugin JavaScript -->
@@ -109,7 +127,7 @@
             <!-- Custom Theme JavaScript -->
             <script src="{{ asset('bundles/acmestore/js/sb-admin-2.js') }}"></script>
             {# <script src="{{ asset('bundles/acmestore/js/jquery.confirm.js') }}"></script>#}
-             <script src="{{ asset('bundles/acmestore/js/ready.js') }}"></script> 
+            <script src="{{ asset('bundles/acmestore/js/ready.js') }}"></script> 
         {% endblock %}
     </body>
 </html>

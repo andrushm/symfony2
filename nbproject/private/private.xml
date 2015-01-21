@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/W:/symfony2/htdocs/src/Acme/StoreBundle/Menu/Builder.php</file>
-            <file>file:/W:/symfony2/htdocs/web/bundles/acmestore/css/sb-admin-2.css</file>
-            <file>file:/W:/symfony2/htdocs/src/Acme/RecipeBundle/Entity/Recipe.php</file>
-            <file>file:/W:/symfony2/htdocs/src/Acme/RecipeBundle/Resources/views/Recipe/form.html.twig</file>
-            <file>file:/W:/symfony2/htdocs/src/Acme/RecipeBundle/Entity/Ingredient.php</file>
-            <file>file:/W:/symfony2/htdocs/app/Resources/views/base.html.twig</file>
-            <file>file:/W:/symfony2/htdocs/src/Acme/RecipeBundle/Resources/views/Recipe/index.html.twig</file>
-            <file>file:/W:/symfony2/htdocs/src/Acme/RecipeBundle/Entity/Composite.php</file>
-            <file>file:/W:/symfony2/htdocs/src/Acme/RecipeBundle/Controller/RecipeController.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

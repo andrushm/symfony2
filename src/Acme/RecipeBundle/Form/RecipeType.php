@@ -21,7 +21,7 @@ class RecipeType extends AbstractType
 //            ->add('composite')
 //            ->add('user')
             ->add('composite', 'collection', array(
-                                               'label' => 'Компоненти',
+                                               'label' => ' ',
                                                'type' => new CompositeType(),
                                                'allow_add' => true,
                                                'allow_delete' => true,
